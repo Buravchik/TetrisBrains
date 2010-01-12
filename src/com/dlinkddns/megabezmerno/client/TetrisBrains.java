@@ -13,12 +13,11 @@ public class TetrisBrains implements EntryPoint {
 
 }
 class figint {
-	public final static int L1=1;
-	public final static int L2=2;
-	public final static int R1=3;
-	public final static int R2=4;
-	public final static int S1=5;
-	public final static int S2=6;
+	public final static int L=1;
+	public final static int J=2;
+	public final static int T=3;
+	public final static int S=5;
+	public final static int Z=6;
 	public final static int I=7;
 	public final static int O=8;
 }
@@ -52,6 +51,14 @@ class tetrisPrimitive {
 			}
 		}
 	}
+
+	/*
+	//colorizes the cell of kvadrat as figure.
+	private void colorizeAsFigure(int i, int j, int vShift, int hShift){
+		setColor(i+vShift,j+hShift,figCvet.FIGURE);
+	}
+	*/
+
 	//draws tetris primitive at center of kvadrat with vertical and horisontal shifts and orientation.
 	private void drawFigura (int figura, int orientation, int vShift, int hShift){
 		switch (figura)
@@ -59,6 +66,11 @@ class tetrisPrimitive {
 			case figint.I:
 				switch (orientation) {
 					case 0:
+						/*colorizeAsFigure(5,3,vShift,hShift);
+						colorizeAsFigure(5,4,vShift,hShift);
+						colorizeAsFigure(5,5,vShift,hShift);
+						colorizeAsFigure(5,6,vShift,hShift);
+						*/
 						setColor(5+vShift,3+hShift,figCvet.FIGURE);
 						setColor(5+vShift,4+hShift,figCvet.FIGURE);
 						setColor(5+vShift,5+hShift,figCvet.FIGURE);
@@ -75,7 +87,7 @@ class tetrisPrimitive {
 						break;
 				}
 				break;
-			case figint.L1:
+			case figint.L:
 				switch (orientation) {
 					case 0:
 						setColor(5+vShift,3+hShift,figCvet.FIGURE);
@@ -106,15 +118,105 @@ class tetrisPrimitive {
 						break;
 				}
 				break;
-			case figint.L2:
+			case figint.J:
+				switch (orientation) {
+					case 0:
+						setColor(4+vShift,3+hShift,figCvet.FIGURE);
+						setColor(4+vShift,4+hShift,figCvet.FIGURE);
+						setColor(4+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,5+hShift,figCvet.FIGURE);
+						break;
+					case 1:
+						setColor(4+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,5+hShift,figCvet.FIGURE);
+						setColor(6+vShift,5+hShift,figCvet.FIGURE);
+						setColor(6+vShift,4+hShift,figCvet.FIGURE);
+						break;
+					case 2:
+						setColor(4+vShift,4+hShift,figCvet.FIGURE);
+						setColor(5+vShift,4+hShift,figCvet.FIGURE);
+						setColor(5+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,6+hShift,figCvet.FIGURE);
+						break;
+					case 3:
+						setColor(4+vShift,4+hShift,figCvet.FIGURE);
+						setColor(4+vShift,3+hShift,figCvet.FIGURE);
+						setColor(5+vShift,3+hShift,figCvet.FIGURE);
+						setColor(6+vShift,3+hShift,figCvet.FIGURE);
+						break;
+					default:
+						Window.alert("wrong orientation for figure "+figura);
+						break;
+				}
 				break;
-			case figint.R1:
+			case figint.S:
+				switch (orientation) {
+					case 0:
+						setColor(5+vShift,4+hShift,figCvet.FIGURE);
+						setColor(5+vShift,5+hShift,figCvet.FIGURE);
+						setColor(4+vShift,5+hShift,figCvet.FIGURE);
+						setColor(4+vShift,6+hShift,figCvet.FIGURE);
+						break;
+					case 1:
+						setColor(4+vShift,4+hShift,figCvet.FIGURE);
+						setColor(5+vShift,4+hShift,figCvet.FIGURE);
+						setColor(5+vShift,5+hShift,figCvet.FIGURE);
+						setColor(6+vShift,5+hShift,figCvet.FIGURE);
+						break;
+					default:
+						Window.alert("wrong orientation for figure "+figura);
+						break;
+				}
 				break;
-			case figint.R2:
-				break;
-			case figint.S1:
-				break;
-			case figint.S2:
+			case figint.T:
+				switch (orientation) {
+					case 0:
+						setColor(5+vShift,4+hShift,figCvet.FIGURE);
+						setColor(5+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,6+hShift,figCvet.FIGURE);
+						setColor(6+vShift,5+hShift,figCvet.FIGURE);
+						break;
+					case 1:
+						setColor(4+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,5+hShift,figCvet.FIGURE);
+						setColor(6+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,4+hShift,figCvet.FIGURE);
+						break;
+					case 2:
+						setColor(5+vShift,4+hShift,figCvet.FIGURE);
+						setColor(5+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,6+hShift,figCvet.FIGURE);
+						setColor(4+vShift,5+hShift,figCvet.FIGURE);
+						break;
+					case 3:
+						setColor(4+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,6+hShift,figCvet.FIGURE);
+						setColor(5+vShift,6+hShift,figCvet.FIGURE);
+						break;
+					default:
+						Window.alert("wrong orientation for figure "+figura);
+						break;
+				}
+				break;				
+			case figint.Z:
+				switch (orientation) {
+					case 0:
+						setColor(4+vShift,4+hShift,figCvet.FIGURE);
+						setColor(4+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,6+hShift,figCvet.FIGURE);
+						break;
+					case 1:
+						setColor(4+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,4+hShift,figCvet.FIGURE);
+						setColor(6+vShift,4+hShift,figCvet.FIGURE);
+						break;
+					default:
+						Window.alert("wrong orientation for figure "+figura);
+						break;
+				}
 				break;
 			case figint.O:
 				break;
