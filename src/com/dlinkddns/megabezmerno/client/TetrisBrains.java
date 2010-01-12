@@ -219,7 +219,21 @@ class tetrisPrimitive {
 				}
 				break;
 			case figint.O:
+				switch (orientation) {
+					case 0:
+						setColor(4+vShift,4+hShift,figCvet.FIGURE);
+						setColor(4+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,5+hShift,figCvet.FIGURE);
+						setColor(5+vShift,4+hShift,figCvet.FIGURE);
+						break;
+					default:
+						Window.alert("wrong orientation for figure "+figura);
+						break;							
+				}
 				break;
+			default:
+					Window.alert("wrong figure is provided");
+					break;
 		}
 	}
 	
